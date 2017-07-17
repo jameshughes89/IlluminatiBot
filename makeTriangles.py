@@ -19,7 +19,7 @@ imageColours = [('black', 'white', 1),
 for iSize in imageSizes:
 	for i in range(50):
 		# top point (make it near the top centre)
-		x1 = numpy.random.randint(low=(iSize/2)*0.8, high=(iSize/2)*1.1)
+		x1 = numpy.random.randint(low=(iSize/2)*0.75, high=(iSize/2)*1.25)
 		y1 = numpy.random.randint(low=0, high=iSize*.1)
 	
 		## left point
@@ -27,7 +27,7 @@ for iSize in imageSizes:
 		y2 = numpy.random.randint(low=iSize/2, high=iSize)
 
 		# right point
-		x3 = numpy.random.randint(low=(x2+(x1-x2)*2)*0.9, high= (x2+(x1-x2)*2)*1.1)
+		x3 = numpy.random.randint(low=min((x2+(x1-x2)*2)*0.9, iSize-1), high= min((x2+(x1-x2)*2)*1.1, iSize))
 		y3 = numpy.random.randint(low=(y2)*0.9, high= min((y2)*1.1,iSize))
 
 		print x1, y1
